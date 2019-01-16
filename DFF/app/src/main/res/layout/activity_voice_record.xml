@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.androidtown.sleepdrive_cognition.VoiceRecord">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_voice_record" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include
+            android:id="@+id/voice_record_toolbar"
+            layout="@layout/voice_record_toolbar" />
+    </RelativeLayout>
+
+    <!-- progress bar -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@null">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="3dp"
+            android:background="@drawable/voice_record_text" />
+        <SeekBar
+            android:id="@+id/recProgressBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:max="60000"
+            android:padding="10dp"
+            android:progress="0"/>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:background="@null">
+
+            <TextView
+                android:id="@+id/tvRecStartPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3pt"
+                android:layout_gravity="center_vertical|left"
+                android:layout_alignParentLeft="true"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:text="00:00"
+                />
+            <TextView
+                android:id="@+id/tvRecMaxPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3pt"
+                android:layout_gravity="center_vertical|right"
+                android:layout_alignParentRight="true"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:text="01:00"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnStartRec"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:width="40dp"
+                android:background="@drawable/voice_record_rec"
+                android:onClick="onClick" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- progress bar -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:background="@null"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/line" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/voice_setting_text2" />
+
+        <Spinner
+            android:id="@+id/voice_list"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp" />
+
+        <SeekBar
+            android:id="@+id/playProgressBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:max="60000"
+            android:padding="10dp"
+            android:progress="0" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPlayStartPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="3pt"
+                android:text="00:00"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvPlayMaxPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="3pt"
+                android:text="01:00"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:width="80dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnStartPlay"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:width="40dp"
+                android:background="@drawable/voice_record_play"
+                android:onClick="onClick" />
+
+            <Button
+                android:id="@+id/btnDelRec"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/voice_record_del"
+                android:onClick="onClick" />
+
+            <Button
+                android:id="@+id/btnSetVoice"
+                android:layout_width="85dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/voice_record_set"
+                android:onClick="onClick" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
